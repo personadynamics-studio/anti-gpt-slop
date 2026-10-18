@@ -1,4 +1,4 @@
 interface:
   display_name: "AI 交付物瑕疵簽名庫"
-  short_description: "以 33 條家族簽名掃描 AI 交付物，命中而無法提出必要性、失敗範圍、既有核對與實際攔截者一律退回"
+  short_description: "以 48 條家族簽名掃描 AI 交付物，命中而無法提出必要性、失敗範圍、既有核對與實際攔截者一律退回"
   default_prompt: "Use $gpt-slop-signatures 掃描本次交付之差異內容與聲明原文，逐條比對 33 條家族簽名；命中後逐項提出必要性、失敗範圍、既有核對與實際攔截，缺一即退回該項。"

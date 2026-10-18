@@ -2,12 +2,12 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/personadynamics-studio/anti-gpt-slop?style=flat&label=stars)](https://github.com/personadynamics-studio/anti-gpt-slop/stargazers)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Signatures](https://img.shields.io/badge/signatures-33-critical.svg)](SKILL.md)
-[![Cases](https://img.shields.io/badge/cases-7%20append--only-informational.svg)](SAMPLES.md)
+[![Signatures](https://img.shields.io/badge/signatures-48-critical.svg)](SKILL.md)
+[![Cases](https://img.shields.io/badge/cases-12%20append--only-informational.svg)](SAMPLES.md)
 
-**English** — A signature library and scanning procedure for auditing AI deliverables. It carries 33 family signatures of low-quality or self-authorized code plus an append-only case ledger; any hit that cannot produce four pieces of evidence — necessity, blast radius, pre-existing checks, and a real interception — is rejected. It works in DeepSeek Harness, Codex, Claude Code, and any agent that reads `SKILL.md`.
+**English** — A signature library and scanning procedure for auditing AI deliverables. It carries 48 family signatures of low-quality or self-authorized code plus an append-only case ledger; any hit that cannot produce four pieces of evidence — necessity, blast radius, pre-existing checks, and a real interception — is rejected. It works in DeepSeek Harness, Codex, Claude Code, and any agent that reads `SKILL.md`.
 
-**中文** — 本技能用於審核自動化編碼代理之交付物：33 條瑕疵家族簽名，外加一本 append-only 案例紀錄。命中而無法提出四項舉證者，一律退回。
+**中文** — 本技能用於審核自動化編碼代理之交付物：48 條瑕疵家族簽名，外加一本 append-only 案例紀錄。命中而無法提出四項舉證者，一律退回。
 
 判定依據為可觀察的程式形狀與證據缺口，不作動機推測，亦不作文字風格評論。
 
@@ -121,7 +121,7 @@ npx skills add personadynamics-studio/anti-gpt-slop --global --agent '*'
 
 技能另附**常見說詞與應提證據對照表**：聽到「已修復／已涵蓋／原始碼完成／大方向正確、細節待補／分類不可靠／建議下一步」時，當場應要求何種證據。詳見 [`SKILL.md`](SKILL.md) 第 6 節。
 
-## 33 條家族簽名
+## 48 條家族簽名
 
 | 編號 | 名稱 | 形狀 |
 | --- | --- | --- |
@@ -158,14 +158,29 @@ npx skills add personadynamics-studio/anti-gpt-slop --global --agent '*'
 | SIG-31 | 跨語言同構摘要契約由雙方各自實作並逐次重算 | 應用層與資料庫各實作一次規範化內容與摘要，資料庫逐次重算並拒絕 |
 | SIG-32 | 修復前置條件要求待修狀態先符合期望 | 修復腳本要求現狀先符合目標，真正漂移之資料庫被自身擋下 |
 | SIG-33 | 版本事實散落多處並以等值約束與不可變觸發器固定 | 版本號散見多處，其中一份被等值約束與不可變觸發器釘死 |
+| SIG-34 | 以保存「未知」代替修復生產者 | 自家生產者可證地寫出矛盾組合，改在資料層把「未知」升格為合法狀態 |
+| SIG-35 | 以覆述需求代替交付方案 | 答覆是需求方原話的改寫加口號，全文無檔名、行號、原文引用 |
+| SIG-36 | 自述與版本事實相反 | 號稱撤回、差異實為淨增；或自稱未提交而提交已存在 |
+| SIG-37 | 以正確原則句為新增入口背書 | 原則正確，但句中那個「第二入口」當時並不存在 |
+| SIG-38 | 無承載點、無期限的等待 | 聲明等待外部通知，未寫承載點、期限、對外回應與永不送達的收尾 |
+| SIG-39 | 跨業務循環的責任混同 | 甲循環的方案裡出現乙循環的身分與恢復語義 |
+| SIG-40 | 將「無法精確結算」替換為「不必結算」 | 停止先把收據來源關掉，再把缺證寫成能力極限；未確認永久存在 |
+| SIG-41 | 以新增分支覆蓋舊分支（加法式修復） | 不替換原分支，另加一條分支執行新行為，同一狀態兩套渲染 |
+| SIG-42 | 以不可見能力之名保留死模板 | 保留永不顯示的模板，理由是裡面有個不可達按鈕代表「能力」 |
+| SIG-43 | 以材料中未出現代替需求撤銷之授權 | 樣本裡沒有某功能，即宣告該需求自本期基準撤出 |
+| SIG-44 | 以無文字衝突代替架構相容（錯誤基線） | 以「檔案沒有直接衝突、補丁套得上」當作架構相容 |
+| SIG-45 | 將字面內容放入會被語法掃描的容器 | 原文寫入會被模板引擎掃描的欄位，雙大括號被當變數插值 |
+| SIG-46 | 以過寬的未知分類吞併已證明未執行之失敗 | 空呼叫即判用量未完成，並以測試把阻塞結果定義為通過 |
+| SIG-47 | 將經否定的等待路徑保留為另一必要例外 | 被否定的等待改名為「只在必要時」的例外而復活 |
+| SIG-48 | 為無來源前提補防護，使該前提更難糾正 | 先增設無來源依賴，再為它補防重、補身分、補費用邊界 |
 
-批次與來源：SIG-01～SIG-10 歸納自一件「以外部安裝身分檔作為啟動前置」之案例；SIG-11～SIG-25 歸納自一份內部缺陷紀錄與版本歷史；SIG-26～SIG-27 來自一件驗證中介層之來源歸屬爭議；SIG-28～SIG-30 分別來自保留理由堆疊、自算查詢摘要與自採自比清單三案；SIG-31～SIG-33 來自同一批資料庫稽核。逐條之形狀、觸發詞、當場檢查與判定，見 [`SKILL.md`](SKILL.md)。
+批次與來源：SIG-01～SIG-10 歸納自一件「以外部安裝身分檔作為啟動前置」之案例；SIG-11～SIG-25 歸納自一份內部缺陷紀錄與版本歷史；SIG-26～SIG-27 來自一件驗證中介層之來源歸屬爭議；SIG-28～SIG-30 分別來自保留理由堆疊、自算查詢摘要與自採自比清單三案；SIG-31～SIG-33 來自同一批資料庫稽核；SIG-34～SIG-39 來自一件付款鏈案例；SIG-40 來自一件「停止後用量未確認」案例；SIG-41 與 SIG-42 來自同一件前端結果框拆除案（兩輪自述）；SIG-43～SIG-48 來自一份第三方鑑證報告所引之指紋（其中 SIG-45、SIG-46 另有提交級核實）。逐條之形狀、觸發詞、當場檢查與判定，見 [`SKILL.md`](SKILL.md)。
 
-掃描優先序：先掃 SIG-11、SIG-15、SIG-20、SIG-13（歷史上最常見）；文件出現成堆「保留／維持原狀」時先掃 SIG-28；見到自算查詢摘要或游標印記時先掃 SIG-29；見到自採自比、不可變、無升級入口之清單時先掃 SIG-30；見到應用層與資料庫兩邊各自重算同一摘要時先掃 SIG-31；見到修復或同步腳本自帶前置拒絕時先掃 SIG-32；見到版本號散落又被等值約束固定時先掃 SIG-33。
+掃描優先序：先掃 SIG-11、SIG-15、SIG-20、SIG-13（歷史上最常見）；文件出現成堆「保留／維持原狀」時先掃 SIG-28；見到自算查詢摘要或游標印記時先掃 SIG-29；見到自採自比、不可變、無升級入口之清單時先掃 SIG-30；見到應用層與資料庫兩邊各自重算同一摘要時先掃 SIG-31；見到修復或同步腳本自帶前置拒絕時先掃 SIG-32；見到版本號散落又被等值約束固定時先掃 SIG-33；見到「把可確定的事保存成未知」時先掃 SIG-34；答覆通篇口號而無檔名行號時先掃 SIG-35；自述撤回或拔除時先要版本差異統計再掃 SIG-36；出現「等待外部事件」時先掃 SIG-38；出現「停止或取消之後無法結算、用量未確認」時先掃 SIG-40；出現「保留舊分支、再加一條分支」時先掃 SIG-41；出現「保留恢復能力」當保留理由時先掃 SIG-42；起分支前只核過檔案衝突時先掃 SIG-44；把原文寫進會被模板掃描的欄位時先掃 SIG-45；見到「空用量一律視為未完成」或新增測試把阻塞寫成通過條件時先掃 SIG-46；為一條無來源依賴補防重、補身分、補費用邊界時先掃 SIG-48。
 
 ## 案例紀錄
 
-[`SAMPLES.md`](SAMPLES.md) 為 **append-only** 之案例紀錄：每筆含期間、對象、程式指紋、命中簽名、四項舉證、判定、後續、誤報紀錄與界線。現有 7 筆案例。
+[`SAMPLES.md`](SAMPLES.md) 為 **append-only** 之案例紀錄：每筆含期間、對象、程式指紋、命中簽名、四項舉證、判定、後續、誤報紀錄與界線。現有 12 筆案例。
 
 新形態命中且不在表上時，當場新增 `SIG-xx`（形狀／觸發詞／當場檢查／判定），並於 `SAMPLES.md` 追加一筆。**不得僅於對話中提及即視為登錄；紀錄不得刪除，誤報亦須保留。**
 
@@ -173,7 +188,7 @@ npx skills add personadynamics-studio/anti-gpt-slop --global --agent '*'
 
 ```text
 anti-gpt-slop/
-├── SKILL.md                     技能本體：掃描程序、33 條簽名、四項舉證、說詞對照表
+├── SKILL.md                     技能本體：掃描程序、48 條簽名、四項舉證、說詞對照表
 ├── SAMPLES.md                   append-only 案例紀錄（去識別化）
 ├── README.md
 ├── CHANGELOG.md

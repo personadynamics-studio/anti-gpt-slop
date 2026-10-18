@@ -10,7 +10,7 @@
     {
       "name": "anti-gpt-slop",
       "source": "./",
-      "description": "審核 AI 交付物的瑕疵簽名庫：33 條家族簽名與 append-only 案例紀錄，命中而無法提出四項舉證者一律退回。",
+      "description": "審核 AI 交付物的瑕疵簽名庫：48 條家族簽名與 append-only 案例紀錄，命中而無法提出四項舉證者一律退回。",
       "license": "MIT",
       "keywords": [
         "code-review",
