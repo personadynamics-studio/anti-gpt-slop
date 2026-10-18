@@ -1,0 +1,40 @@
+{
+  "name": "anti-gpt-slop",
+  "version": "0.1.0",
+  "description": "Audit AI deliverables with 33 family signatures of low-quality or self-authorized code, plus an append-only case ledger.",
+  "author": {
+    "name": "personadynamics-studio",
+    "url": "https://github.com/personadynamics-studio"
+  },
+  "homepage": "https://github.com/personadynamics-studio/anti-gpt-slop",
+  "repository": "https://github.com/personadynamics-studio/anti-gpt-slop",
+  "license": "MIT",
+  "keywords": [
+    "code-review",
+    "audit",
+    "anti-slop",
+    "agent-skills",
+    "skill-md",
+    "codex",
+    "claude-code",
+    "deepseek-harness"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Anti Codex Slop",
+    "shortDescription": "以 33 條家族簽名掃描 AI 交付物，命中而無法提出四項舉證者一律退回。",
+    "longDescription": "anti-gpt-slop 加入 gpt-slop-signatures 技能：以 33 條家族簽名逐條比對交付清單、聲明原文與逐項證據，命中後須通過必要性、失敗範圍、既有核對、實際攔截四項舉證，缺一即退回；並以 append-only 案例紀錄保存個案與誤報。",
+    "developerName": "personadynamics-studio",
+    "category": "Code review",
+    "capabilities": [
+      "Read"
+    ],
+    "websiteURL": "https://github.com/personadynamics-studio/anti-gpt-slop",
+    "defaultPrompt": [
+      "掃描這次提交是否含有本庫所列之瑕疵簽名",
+      "檢查這份交付報告是否為假完成",
+      "這道控制有沒有必要性來源"
+    ],
+    "brandColor": "#B4232C"
+  }
+}

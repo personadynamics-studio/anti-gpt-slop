@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "anti-gpt-slop",
+  "owner": {
+    "name": "personadynamics-studio",
+    "url": "https://github.com/personadynamics-studio"
+  },
+  "description": "Install the gpt-slop-signatures skill (anti-gpt-slop) as a Claude plugin.",
+  "plugins": [
+    {
+      "name": "anti-gpt-slop",
+      "source": "./",
+      "description": "審核 AI 交付物的瑕疵簽名庫：33 條家族簽名與 append-only 案例紀錄，命中而無法提出四項舉證者一律退回。",
+      "license": "MIT",
+      "keywords": [
+        "code-review",
+        "audit",
+        "anti-slop",
+        "agent-skills",
+        "codex"
+      ]
+    }
+  ]
+}
