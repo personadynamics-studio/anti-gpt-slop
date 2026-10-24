@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "anti-gpt-slop",
-  "description": "審核 AI 交付物的瑕疵簽名庫：48 條家族簽名與 append-only 案例紀錄，命中而無法提出四項舉證者一律退回。",
-  "version": "0.2.0",
+  "description": "審核 AI 交付物的瑕疵簽名庫：6 大家族 29 條簽名與 append-only 案例紀錄，命中而無法提出四項舉證者一律退回。",
+  "version": "0.3.0",
   "author": {
     "name": "personadynamics-studio",
     "url": "https://github.com/personadynamics-studio"
